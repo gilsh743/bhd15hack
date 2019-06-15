@@ -1,0 +1,19 @@
+{
+  "name": "bhd15hack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilsh743/bhd15hack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gilsh743/bhd15hack/issues"
+  },
+  "homepage": "https://github.com/gilsh743/bhd15hack#readme"
+}

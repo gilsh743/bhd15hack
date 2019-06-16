@@ -2,6 +2,7 @@
 import React from 'react';
 import TranslationInput from './translation-input';
 import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component';
+import JustButton from './buttun.component'
 
 class Text extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Text extends React.Component {
         this.onTransTextChange = this.onTransTextChange.bind(this);
         this.onSelected = this.onSelected.bind(this);
         this.onFinishSentenceClick = this.onFinishSentenceClick.bind(this);
+        this.finishDocument = this.finishDocument.bind(this);
     };
 
     onTransTextChange(event) {
@@ -38,6 +40,10 @@ class Text extends React.Component {
         
     }
 
+    finishDocument(){
+        this.sendTransSentences()
+    }
+
     sendTransSentences(){
         let fetchOptions = {
             method: 'POST',
@@ -63,7 +69,9 @@ class Text extends React.Component {
                     onchange={this.onTransTextChange}
                     onEnter={this.onFinishSentenceClick}
                     value={this.state.transText} />
-                {this.state.transText}
+
+                <JustButton description="Finish Document" onClick={this.finishDocument}/>
+
             </div>
         )
     }

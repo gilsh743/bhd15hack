@@ -19,8 +19,11 @@ export default class OriginalTextBox extends React.Component {
     render() {
         return (
             <div>
-                {/* <input className="textBox" placeholder={this.props.placeholder} disabled={this.state.isDisabled}/> */}
-                <TextArea onKeyDownCapture={this.onEnter} autoFocus className="textBox" placeholder={this.props.placeholder} disabled={this.state.isDisabled}/>
+                <TextArea placeholder={this.props.placeholder}
+                          onKeyDownCapture={this.onEnter} autoFocus 
+                          className="textBox" 
+                          disabled={this.state.isDisabled}
+                />
                 <button onClick={() => this.props.onSelected(window.getSelection().toString())}>Selection</button>
 
             </div>

@@ -3,7 +3,8 @@ import React from 'react';
 import TranslationInput from './translation-input';
 import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component';
 import './Text.css';
-import JustButton from './buttun.component'
+import JustButton from './buttun.component';
+import TransTextBox from './trans-text-box/trans-text-box.js';
 
 class Text extends React.Component {
     constructor(props) {
@@ -62,7 +63,11 @@ class Text extends React.Component {
     render() {
         return (
             <div>
-                <OriginalTextBox onSelected={this.onSelected} />
+                <div className="texts-area">
+                    <OriginalTextBox onSelected={this.onSelected} />
+                    <TransTextBox />
+                </div>
+                
                 {this.state.orgText}
 
                 <TranslationInput 

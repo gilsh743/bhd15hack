@@ -1,9 +1,11 @@
-.Textpage{
-    display: flex;
-    flex-direction: row;
-}
 
 .textBox{
     margin-top: 2%;
+    width: 100%;
 }
 
+.texts-area {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}

@@ -1,11 +1,10 @@
 
 import React from 'react';
+import Inputs from '../CommonComponents/textbox.component';
 
 const Sound = (props) => {
     return (
-        <div>
-            sound
-        </div>
+        <Inputs speakers={['A', 'B']}></Inputs>
     );
 }
 

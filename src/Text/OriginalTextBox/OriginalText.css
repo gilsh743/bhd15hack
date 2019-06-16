@@ -1,0 +1,10 @@
+.textBox{
+    margin-left: 45%;
+    display:flex;
+    flex-direction:column;
+}
+
+.arabText{
+    margin-top:5%;
+    margin-bottom: 15%;
+}

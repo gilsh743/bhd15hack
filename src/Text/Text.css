@@ -1,0 +1,10 @@
+.Textpage{
+    display: flex;
+    flex-direction: row;
+}
+
+.textBox{
+    margin-top: 2%;
+    width:150%;
+}
+

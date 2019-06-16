@@ -1,10 +1,16 @@
 import React from 'react';
+import { Form, TextArea } from 'semantic-ui-react'
+import "./translation-input.css"
 
 const TranslationInput = (props) => {
     return (
-        <div>
-            {props.description}
-            <input type='text' name='translation-input' onChange={props.onchange}></input>
+        <div >
+            <TextArea 
+                          className="hebrewBox"                    
+                          multiline="true"
+                          rows={25} 
+                          name='translation-input'
+                          onChange={props.onchange}/>
         </div>
 
     );

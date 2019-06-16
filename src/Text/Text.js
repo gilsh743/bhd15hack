@@ -1,7 +1,8 @@
 
 import React from 'react';
 import TranslationInput from './translation-input';
-import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component'
+import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component';
+import './Text.css';
 
 
 class Text extends React.Component {
@@ -23,12 +24,13 @@ class Text extends React.Component {
 
     render() {
         return (
-        <div>
-            <OriginalTextBox onSelected={this.onSelected} />
-            {this.state.orgText}
-
+        <div className="Textpage">
             <TranslationInput description={"write your translation here: "} onchange={this.onTransTextChange} />
             {this.state.transText}
+            <OriginalTextBox onSelected={this.onSelected} className="arabText" />
+            {this.state.orgText}
+
+            
         </div>
         )
     }

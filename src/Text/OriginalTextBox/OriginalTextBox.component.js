@@ -1,7 +1,8 @@
 import React from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import TextArea from 'react-textarea-autosize'
+import { Form, TextArea } from 'semantic-ui-react'
+import './OriginalText.css';
 
 export default class OriginalTextBox extends React.Component {
     constructor(props) {
@@ -18,13 +19,16 @@ export default class OriginalTextBox extends React.Component {
 
     render() {
         return (
-            <div>
+            <div
+                className="textBox" >
                 <TextArea placeholder={this.props.placeholder}
                           onKeyDownCapture={this.onEnter} autoFocus 
-                          className="textBox" 
                           disabled={this.state.isDisabled}
+                          
+                          multiline="true"
+                          rows={25}
                 />
-                <button onClick={() => this.props.onSelected()}>Selection</button>
+                <button className={"arabText"} onClick={() => this.props.onSelected()}>Selection</button>
 
             </div>
         );

@@ -24,7 +24,7 @@ export default class OriginalTextBox extends React.Component {
                           className="textBox" 
                           disabled={this.state.isDisabled}
                 />
-                <button onClick={() => this.props.onSelected(window.getSelection().toString())}>Selection</button>
+                <button onClick={() => this.props.onSelected()}>Selection</button>
 
             </div>
         );

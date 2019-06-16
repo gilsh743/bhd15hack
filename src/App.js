@@ -1,4 +1,4 @@
-
+import NavBar from './Home/NavBar.js';
 import React from 'react';
 import Sound from './Sound/Sound';
 import Text from './Text/Text';
@@ -12,6 +12,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <h1> מגדל בבל </h1>
+      <NavBar> </NavBar>
+
         <Route path="/" exact component={Home} />
         <Route path="/sound/" component={Sound} />
         <Route path="/text/" component={Text} />

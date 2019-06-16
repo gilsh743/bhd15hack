@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <h1> מגדל בבל </h1>
+      <img height={100} src={require('./images/sasd.png')} alt="g" />
       <NavBar> </NavBar>
 
         <Route path="/" exact component={Home} />

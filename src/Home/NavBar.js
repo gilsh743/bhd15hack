@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import HeadSet from '@material-ui/icons/Headset';
 import Textsms from '@material-ui/icons/Textsms';
+import Home from '@material-ui/icons/Home';
 import { Link } from "react-router-dom";
 
 
@@ -29,15 +30,15 @@ class NavBar extends React.Component {
     render() {
     return (
         <Paper>
-      <Tabs
-        value={this.value}
-        onChange={handleChange}
-        variant= "fullWidth"
+      <Tabs 
+            
+        centered="true"
         indicatorColor="primary"
         textColor="primary"
       >
-        <Link to="/sound/" > <Tab icon={<HeadSet/>}  aria-label="Sound" /> </Link>
-        <Link to="/text/"> <Tab icon={<Textsms/>} aria-label="Text" /> </Link>
+        <Link to="/"> <Tab icon={<Home/>}  aria-label="Home" /> </Link>
+        <Link to="/sound/"> <Tab icon={<HeadSet/>} aria-label="Sound" /> </Link>
+        <Link to="/text/"> <Tab icon={<Textsms/>}  aria-label="Text" /> </Link>
       </Tabs>
     </Paper>
     );

@@ -5,7 +5,7 @@ import "./translation-input.css"
 const TranslationInput = (props) => {
     return (
         <div >
-            <TextArea 
+ p            <TextArea 
                           className="hebrewBox"                    
                           multiline="true"
                           rows={25} 

@@ -1,11 +1,12 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
-function Button(props) {
+function JustButton(props) {
     return (
-      <button className="square" onClick={props.onClick}>
+      <Button className="square" onClick={props.onClick}>
         {props.description}
-      </button>
+      </Button>
     );
   }
 
-  export default Button;
+  export default JustButton;

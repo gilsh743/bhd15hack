@@ -1,4 +1,4 @@
-
+import NavBar from './Home/NavBar.js';
 import React from 'react';
 import Sound from './Sound/Sound';
 import Text from './Text/Text';
@@ -12,6 +12,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <img height={100} src={require('./images/sasd.png')} alt="g" />
+      <NavBar> </NavBar>
+
         <Route path="/" exact component={Home} />
         <Route path="/sound/" component={Sound} />
         <Route path="/text/" component={Text} />

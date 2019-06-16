@@ -31,16 +31,16 @@ class NavBar extends React.Component {
     return (
         <Paper>
       <Tabs 
-            
+        class="NavBar"
         centered="true"
         indicatorColor="primary"
         textColor="primary"
       >
-        <Link to="/"> <Tab icon={<Home/>}  aria-label="Home" /> </Link>
-        <Link to="/sound/"> <Tab icon={<HeadSet/>} aria-label="Sound" /> </Link>
-        <Link to="/text/"> <Tab icon={<Textsms/>}  aria-label="Text" /> </Link>
+        <Link to="/" className={"NavBarOption"}> <Tab  icon={<Home/>}  aria-label="Home" /> </Link>
+        <Link to="/sound/" className={"NavBarOption"}> <Tab className={"NavBarOption"} icon={<HeadSet/>} aria-label="Sound" /> </Link>
+        <Link to="/text/" className={"NavBarOption"}> <Tab className={"NavBarOption"} icon={<Textsms/>}  aria-label="Text" /> </Link>
       </Tabs>
-    </Paper>
+    </Paper> 
     );
 }
 }

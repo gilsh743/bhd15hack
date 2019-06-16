@@ -1,13 +1,36 @@
 .App {
   text-align: center;
+  background-color: beige;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.App-logo{
+  animation: App-logo-spin infinite 1s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
+.NavBar{
+  background-color:black;
+}
+
+.intel {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 2s ease-in-out;
+          transition:         transform 2s ease-in-out;
+}
+.intel:hover{
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.NavBarOption{
+  color: white;
+}
+
+.logos{
+  align-items: right;
+  display: flex;
+  flex-direction: row;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

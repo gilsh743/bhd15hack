@@ -13,7 +13,7 @@ export default class OriginalTextBox extends React.Component {
             <div>
                 <input className="textBox" placeholder={this.props.placeholder} disabled={this.state.isDisabled}/>
                 <button onClick={() => this.setState({isDisabled: true})}>Translate</button>
-                <button onClick={() => console.log("selection", window.getSelection().toString())}>Selection</button>
+                <button onClick={() => this.props.onSelected(window.getSelection().toString())}>Selection</button>
 
             </div>
         );

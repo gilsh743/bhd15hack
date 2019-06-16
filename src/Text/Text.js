@@ -1,49 +1,72 @@
 
 import React from 'react';
 import TranslationInput from './translation-input';
-import Button from './buttun.component';
-import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component'
+import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component';
 
 class Text extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {transText: " " , orgText: "", transSentences: []};
+        this.state = { transText: "", orgText: "", transSentences: [], sentencesCounter: 0 };
 
         this.onTransTextChange = this.onTransTextChange.bind(this);
         this.onSelected = this.onSelected.bind(this);
         this.onFinishSentenceClick = this.onFinishSentenceClick.bind(this);
     };
 
-    onTransTextChange(event){
-        this.setState({transText: event.target.value});
+    onTransTextChange(event) {
+        this.setState({ transText: event.target.value });
     };
 
     onSelected() {
-        this.setState({orgText: window.getSelection().toString()})
+        this.setState({ orgText: window.getSelection().toString() })
     }
 
-    onFinishSentenceClick(){
-         var transText = this.state.transText;
-         var origText = this.state.origText;
-         var transSentences = this.state.transSentences.concat({"orig": origText, "trans": transText});
-         this.setState({transSentences: transSentences});
+    onFinishSentenceClick() {
+        var transText = this.state.transText;
+        var origText = this.state.origText;
+        var transSentences = this.state.transSentences.concat({ "orig": origText, "trans": transText });
+        var counter = this.state.sentencesCounter + 1;
+        
+        if (counter >= 20) {
+            counter = 0;
+            this.sendTransSentences()
+        }
+        else {
+            counter++;
+        }
+        this.setState({ transText: "", transSentences: transSentences, sentencesCounter: counter });
+        
+    }
 
+    sendTransSentences(){
+        let fetchOptions = {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state.transSentences)
+        };
+        fetch('', fetchOptions)
+            .then(response => response.json())
+            .then(response => console.log(response));
     }
 
     render() {
         return (
-        <div>
-            <OriginalTextBox onSelected={this.onSelected} />
-            {this.state.orgText}
+            <div>
+                <OriginalTextBox onSelected={this.onSelected} />
+                {this.state.orgText}
 
-            <TranslationInput description={"write your translation here: "} onchange={this.onTransTextChange} />
-            {this.state.transText}
-            <Button description={"finish translate sentence"} onClick={this.onFinishSentenceClick}></Button>
-
-        </div>
+                <TranslationInput 
+                    description={"write your translation here: "}
+                    onchange={this.onTransTextChange}
+                    onEnter={this.onFinishSentenceClick}
+                    value={this.state.transText} />
+                {this.state.transText}
+            </div>
         )
     }
-  }
-
+}
 
 export default Text;

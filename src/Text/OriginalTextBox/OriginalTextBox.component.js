@@ -7,14 +7,20 @@ export default class OriginalTextBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.onEnter = this.onEnter.bind(this);
     }   
+
+    onEnter(e) {
+            if(e.keyCode === 13){
+                this.setState({isDisabled: true})
+            }
+    }
 
     render() {
         return (
             <div>
                 {/* <input className="textBox" placeholder={this.props.placeholder} disabled={this.state.isDisabled}/> */}
-                <TextArea onKeyDownCapture={e => console.log("event", e)} autoFocus className="textBox" placeholder={this.props.placeholder} disabled={this.state.isDisabled}/>>
-                <button onClick={() => this.setState({isDisabled: true})}>Translate</button>
+                <TextArea onKeyDownCapture={this.onEnter} autoFocus className="textBox" placeholder={this.props.placeholder} disabled={this.state.isDisabled}/>
                 <button onClick={() => this.props.onSelected(window.getSelection().toString())}>Selection</button>
 
             </div>

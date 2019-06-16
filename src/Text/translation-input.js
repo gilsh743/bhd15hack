@@ -1,18 +1,26 @@
 import React from 'react';
-import { Form, TextArea } from 'semantic-ui-react'
-import "./translation-input.css"
+import TextArea from 'react-textarea-autosize';
+import { Input } from '@material-ui/core';
 
 const TranslationInput = (props) => {
-    return (
-        <div >
- p            <TextArea 
-                          className="hebrewBox"                    
-                          multiline="true"
-                          rows={25} 
-                          name='translation-input'
-                          onChange={props.onchange}/>
-        </div>
 
+    const onEnter = e =>  {
+        if(e.keyCode === 13){
+          props.onEnter();
+        }
+    };
+
+    return (
+        <div>
+            {props.description}
+            <Input 
+                onKeyDownCapture={onEnter}
+                type='text'
+                name='translation-input'
+                onChange={props.onchange}
+                value={props.value}
+            />
+        </div>
     );
 }
 

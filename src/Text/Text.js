@@ -1,13 +1,8 @@
 
 import React from 'react';
 import TranslationInput from './translation-input';
-<<<<<<< HEAD
 import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component';
 import './Text.css';
-=======
-import Button from './buttun.component';
-import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component'
->>>>>>> 9a4cf5a207218d72636936ab0e2881208f754e87
 
 class Text extends React.Component {
     constructor(props){
@@ -40,15 +35,9 @@ class Text extends React.Component {
         <div className="Textpage">
             <TranslationInput description={"write your translation here: "} onchange={this.onTransTextChange} />
             {this.state.transText}
-<<<<<<< HEAD
             <OriginalTextBox onSelected={this.onSelected} className="arabText" />
             {this.state.orgText}
 
-            
-=======
-            <Button description={"finish translate sentence"} onClick={this.onFinishSentenceClick}></Button>
-
->>>>>>> 9a4cf5a207218d72636936ab0e2881208f754e87
         </div>
         )
     }

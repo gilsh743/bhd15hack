@@ -1,13 +1,22 @@
 
 import React from 'react';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Sound from './Sound/Sound';
+import Text from './Text/Text';
+import Home from './Home/Home';
+// import CKEditor from '@ckeditor/ckeditor5-react';
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <CKEditor
+      <Router>
+        <Route path="/" exact component={Home} />
+        <Route path="/sound/" component={Sound} />
+        <Route path="/text/" component={Text} />
+      </Router>
+      {/* <CKEditor
           editor={ ClassicEditor }
           data="<p>Hello from CKEditor 5!</p>"
           onInit={ editor => {
@@ -24,7 +33,7 @@ function App() {
           onFocus={ editor => {
               console.log( 'Focus.', editor );
           } }
-      />
+      /> */}
     </div>
   );
 }

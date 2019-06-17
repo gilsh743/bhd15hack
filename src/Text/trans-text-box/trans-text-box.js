@@ -7,7 +7,20 @@ import './trans-text-box.css';
 class TransTextBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            data: ""
+        };
+    }
+
+    appendNewTrans(newTrans) {
+        var currentData = this.state.data;
+        this.setState({data: currentData + newTrans + "\r\n"})
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.trans !== prevProps.trans) {
+            this.appendNewTrans(this.props.trans);
+        }
     }
 
     render() {
@@ -25,7 +38,7 @@ class TransTextBox extends React.Component {
                     } }
                     onChange={ ( event, editor ) => console.log( { event, editor } ) }
                     editor={ DecoupledEditor }
-                    data=""
+                    data={this.state.data}
                     // config={ /* the editor configuration */ }
                 />
             </div>

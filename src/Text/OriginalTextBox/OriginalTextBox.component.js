@@ -28,8 +28,6 @@ export default class OriginalTextBox extends React.Component {
                           multiline="true"
                           rows={25}
                 />
-                <button className={"arabText"} onClick={() => this.props.onSelected()}>Selection</button>
-
             </div>
         );
     }

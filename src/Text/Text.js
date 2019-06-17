@@ -83,8 +83,8 @@ class Text extends React.Component {
                 {this.state.orgText}
 
                 <TranslationInput 
-                    description={"write your translation here: "}
-                    onchange={this.onTransTextChange}
+                    description={"הכנס טקסט לתרגום "}
+                    onChange={this.onTransTextChange}
                     onEnter={this.onFinishSentenceClick}
                     value={this.state.transText} />
 

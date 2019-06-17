@@ -1,6 +1,7 @@
 import React from 'react';
 import TextArea from 'react-textarea-autosize';
 import { Input } from '@material-ui/core';
+import './translation-input.css';
 
 const TranslationInput = (props) => {
 
@@ -11,8 +12,10 @@ const TranslationInput = (props) => {
     };
 
     return (
-        <div>
+        <div className={"inputTextWrapper"}>
+            {/* <div className={"inputText"}> */}
             {props.description}
+            
             <Input 
                 onKeyDownCapture={onEnter}
                 type='text'
@@ -20,6 +23,7 @@ const TranslationInput = (props) => {
                 onChange={props.onchange}
                 value={props.value}
             />
+            {/* </div> */}
         </div>
     );
 }

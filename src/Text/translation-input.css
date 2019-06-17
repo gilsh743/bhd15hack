@@ -1,4 +1,23 @@
 .hebrewBox{
-    margin-left: 15%;
-    width: 1000%;
+    /* margin-left: 15%;
+    width: 1000%; */
+    direction: rtl;
+    border-radius: 1em;
+    border: 1px solid #000; /* everything up to and including this line
+                               are aesthetics, adjust to taste */
+    outline: none; /* removes the default outline */
+    resize: none;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.inputTextWrapper {
+    position: relative;
+    position: absolute;
+    bottom: 0;
+}
+
+.inputText{
+    position: absolute;
+    bottom: 0;
 }

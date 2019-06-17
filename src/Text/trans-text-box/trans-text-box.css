@@ -3,3 +3,10 @@
     background-color: white;
     height: 60%;
 }
+
+.transBoxWrapper {
+    height: 78vh;
+    width: 48%;
+    margin-left: 3%;
+    margin-top: 1.6%;
+}

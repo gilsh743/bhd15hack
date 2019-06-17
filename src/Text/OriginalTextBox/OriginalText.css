@@ -1,7 +1,12 @@
 .textBox{
-    display:flex;
-    flex-direction:column;
+    margin-top: 1.6%;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-right: 25px;
+    width: 45%;
 }
+
 
 .arabText{
     margin-top:5%;

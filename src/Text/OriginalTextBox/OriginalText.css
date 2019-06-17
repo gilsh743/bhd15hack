@@ -6,8 +6,12 @@
     margin-right: 25px;
     width: 45%;
     direction: rtl;
+    font-size: x-large;
 }
 
+textarea {
+    font-size: large;
+}
 
 .arabText{
     margin-top:5%;

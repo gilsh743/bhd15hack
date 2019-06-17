@@ -7,7 +7,7 @@ import './OriginalText.css';
 export default class OriginalTextBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {text: ""};
         this.onEnter = this.onEnter.bind(this);
     }   
 
@@ -28,6 +28,8 @@ export default class OriginalTextBox extends React.Component {
                           multiline="true"
                           rows={25}
                 />
+                <button onClick={() => this.setState({text: window.getSelection().toString()})}>מה מתרגמים עכשיו?</button>
+                {this.state.text}
             </div>
         );
     }

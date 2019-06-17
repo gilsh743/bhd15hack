@@ -1,7 +1,7 @@
 import React from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { Form, TextArea } from 'semantic-ui-react'
+import { Form, TextArea } from 'semantic-ui-react';
 import './OriginalText.css';
 
 export default class OriginalTextBox extends React.Component {

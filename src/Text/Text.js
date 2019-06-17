@@ -3,12 +3,19 @@ import React from 'react';
 import TranslationInput from './translation-input';
 import OriginalTextBox from './OriginalTextBox/OriginalTextBox.component';
 import './Text.css';
-import JustButton from './buttun.component'
+import JustButton from './buttun.component';
+import TransTextBox from './trans-text-box/trans-text-box.js';
 
 class Text extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { transText: "", orgText: "", transSentences: [], sentencesCounter: 0 };
+        this.state = {
+            transText: "",
+            orgText: "",
+            transSentences: [],
+            sentencesCounter: 0,
+            lastTrans: ""
+        };
 
         this.onTransTextChange = this.onTransTextChange.bind(this);
         this.onSelected = this.onSelected.bind(this);
@@ -37,7 +44,13 @@ class Text extends React.Component {
         else {
             counter++;
         }
-        this.setState({ transText: "", transSentences: transSentences, sentencesCounter: counter });
+        this.setState({ 
+            transText: "",
+            transSentences: transSentences,
+            sentencesCounter: counter,
+            lastTrans: transText
+        });
+        // call tran-text-box appendNewTrans
         
     }
 
@@ -62,7 +75,11 @@ class Text extends React.Component {
     render() {
         return (
             <div>
-                <OriginalTextBox onSelected={this.onSelected} />
+                <div className="texts-area">
+                    <OriginalTextBox onSelected={this.onSelected} />
+                    <TransTextBox trans={this.state.lastTrans}/>
+                </div>
+                
                 {this.state.orgText}
 
                 <TranslationInput 

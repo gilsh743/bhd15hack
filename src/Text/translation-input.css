@@ -18,6 +18,11 @@
     margin-top: -100px;
 }
 
+.myText {
+    direction: rtl;
+    text-align: center;
+}
+
 .inputText{
     position: absolute;
     bottom: 0;

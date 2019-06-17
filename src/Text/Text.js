@@ -33,8 +33,8 @@ class Text extends React.Component {
 
     onFinishSentenceClick() {
         var transText = this.state.transText;
-        var origText = this.state.origText;
-        var transSentences = this.state.transSentences.concat({ "orig": origText, "trans": transText });
+        var orgText = this.state.orgText;
+        var transSentences = this.state.transSentences.concat({ "orig": orgText, "trans": transText });
         var counter = this.state.sentencesCounter + 1;
         
         if (counter >= 20) {
@@ -67,9 +67,9 @@ class Text extends React.Component {
             },
             body: JSON.stringify(this.state.transSentences)
         };
-        fetch('', fetchOptions)
-            .then(response => response.json())
-            .then(response => console.log(response));
+        fetch('http://192.168.43.43:5000/api/addTranslation', fetchOptions);
+            // .then(response => response.())
+            // .then(response => console.log(response));
     }
 
     render() {

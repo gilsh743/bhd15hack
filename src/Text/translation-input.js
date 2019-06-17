@@ -12,8 +12,13 @@ const TranslationInput = (props) => {
     };
 
     return (
-        <div className={"inputTextWrapper"}>
-            <TextArea className="myText" placeholder={props.description} onChange={props.onChange} value={props.value} onKeyDownCapture={onEnter} />
+        <div>
+            {props.description}
+            <Input onKeyDown={onEnter}
+            type="text"
+            name="translation-input"
+            onChange={props.onChange}
+            value={props.value} />
         </div>
     );
 }

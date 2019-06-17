@@ -25,7 +25,7 @@ class TransTextBox extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={"transBoxWrapper"}>
                 <CKEditor
                     onInit={ editor => {
                         console.log( 'Editor is ready to use!', editor );

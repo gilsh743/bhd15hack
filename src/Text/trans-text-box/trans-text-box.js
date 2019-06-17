@@ -1,35 +1,46 @@
 
 import React from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import './trans-text-box.css';
 
 class TransTextBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            data: ""
+        };
+    }
+
+    appendNewTrans(newTrans) {
+        var currentData = this.state.data;
+        this.setState({data: currentData + newTrans + "\r\n"})
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.trans !== prevProps.trans) {
+            this.appendNewTrans(this.props.trans);
+        }
     }
 
     render() {
         return (
             <div>
                 <CKEditor
-          editor={ ClassicEditor }
-          data="<p>Hello from CKEditor 5!</p>"
-          onInit={ editor => {
-              // You can store the "editor" and use when it is needed.
-              console.log( 'Editor is ready to use!', editor );
-          } }
-          onChange={ ( event, editor ) => {
-              const data = editor.getData();
-              console.log( { event, editor, data } );
-          } }
-          onBlur={ editor => {
-              console.log( 'Blur.', editor );
-          } }
-          onFocus={ editor => {
-              console.log( 'Focus.', editor );
-          } }
-      />
+                    onInit={ editor => {
+                        console.log( 'Editor is ready to use!', editor );
+
+                        // Insert the toolbar before the editable area.
+                        editor.ui.getEditableElement().parentElement.insertBefore(
+                            editor.ui.view.toolbar.element,
+                            editor.ui.getEditableElement()
+                        );
+                    } }
+                    onChange={ ( event, editor ) => console.log( { event, editor } ) }
+                    editor={ DecoupledEditor }
+                    data={this.state.data}
+                    // config={ /* the editor configuration */ }
+                />
             </div>
         )
     }

@@ -3,7 +3,7 @@ import React from 'react';
 import Sound from './Sound/Sound';
 import Text from './Text/Text';
 import Home from './Home/Home';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 
 function App() {

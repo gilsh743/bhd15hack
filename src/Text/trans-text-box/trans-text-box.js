@@ -46,14 +46,13 @@ class TransTextBox extends React.Component {
                             // plugins: ['Typing']
                             fontFamily: {
                                 options: [
-                                    'David',
-                                    'Tahoma'
+                                    'Tahoma',
+                                    'David'
                                 ]
                             },
                             alignment: {
-                                options: [ 'right', 'left'],
-                                default: 'right'
-                            },
+                                options: [ 'right', 'left', 'center', 'justify']
+                            }
                             
                         }
                      }

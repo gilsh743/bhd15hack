@@ -35,11 +35,28 @@ class TransTextBox extends React.Component {
                             editor.ui.view.toolbar.element,
                             editor.ui.getEditableElement()
                         );
+                        editor.execute( 'alignment', { value: 'right' } );
                     } }
                     onChange={ ( event, editor ) => console.log( { event, editor } ) }
                     editor={ DecoupledEditor }
                     data={this.state.data}
-                    // config={ /* the editor configuration */ }
+                    config={ 
+                        {
+                            removePlugins: ['Strikethrough', 'BlockQuote', 'Link', 'ImageUpload', 'MediaEmbed', 'Heading'],
+                            // plugins: ['Typing']
+                            fontFamily: {
+                                options: [
+                                    'David',
+                                    'Tahoma'
+                                ]
+                            },
+                            alignment: {
+                                options: [ 'right', 'left'],
+                                default: 'right'
+                            },
+                            
+                        }
+                     }
                 />
             </div>
         )
